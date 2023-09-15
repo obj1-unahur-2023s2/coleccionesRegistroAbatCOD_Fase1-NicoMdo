@@ -13,8 +13,9 @@ object callOfDuty {
 	}
 	
 	method agregarAbatidosVariosDias(registrosAbatidos){
-		if                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-	
+		
+	}
+		                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 	method yaEstaElDia(dia){
 		return registro.any({x => self.dia(x) == dia })
 	}
@@ -36,8 +37,33 @@ object callOfDuty {
 		}
 		self.error("hay dias que no estan")
 	}
+	
+	method cantidadDeDiasRegistrados() = registro.size()
+	
+	method estaVacioElRegistro() = registro.isEmpty()
+	
+	method algunDiaAbatio(cantidad) = registro.any({ r => self.cantAbatidos(r) == cantidad})
+	
+	method primerValorDeAbatidos() = self.cantAbatidos(registro.first())
+	
+	method ultimoValorDeAbatidos() = self.cantAbatidos(registro.last())
+	
+	method maximoValorDeAbatidos() = registro.max( {x => self.cantAbatidos(x)}.first() )
+	
+	method totalAbatidos() = registro.sum({x => self.cantAbatidos(x)})
+	
+	method cantidadDeAbatidosElDia(dia) = self.cantAbatidos(self.registroDia(dia))
+	
+	method ultimoValorDeAbatidosConSize() = self.cantAbatidos(registro.get(registro.size()-1))
+	
+	method diasConAbatidosSuperioresA(cuanto) = registro.filter({x => self.dia })
 
+	method esCrack()= 
 
 
 }
+	
+	
+
+
 	
